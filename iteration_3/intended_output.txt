@@ -1,0 +1,355 @@
+//======================================================
+//Test follow -u userid -p playlist_name -f userid2    FR4.1.1, FR4.1.3, FR4.1.5, FR4.1.6
+//
+follow -u cindy -p favourites -f cindy
+follow -u cindy -p non_existing_list -f ajones
+follow -u cindy -p favourites -f ajones
+add -l ajones favourites 19
+show users
+MyTunesCollection:
+gjones Glenn Jones
+     Playlists:
+     0 mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+sjones Susan Jones
+     Playlists:
+
+fjones Frank Jones
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 13: There's A Place mp3: Unknown
+          2 14: Twist And Shout mp3: Unknown
+          3 71: You Won't See Me mp3: Unknown
+
+     1 mysongs
+          Playlist Tracks:
+
+
+ajones Anne Jones
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+
+
+cindy Cindy Reynolds
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+
+
+//======================================================
+//Test having more than one follower FR4.1.8
+follow -u fjones -p favourites -f ajones
+add -l ajones favourites 20
+show users
+MyTunesCollection:
+gjones Glenn Jones
+     Playlists:
+     0 mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+sjones Susan Jones
+     Playlists:
+
+fjones Frank Jones
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+     1 mysongs
+          Playlist Tracks:
+
+
+ajones Anne Jones
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+
+cindy Cindy Reynolds
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+
+//======================================================
+//Test users following more than one playlist FR4.1.7
+follow -u fjones -p mysongs -f gjones
+show users
+MyTunesCollection:
+gjones Glenn Jones
+     Playlists:
+     0 mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+sjones Susan Jones
+     Playlists:
+
+fjones Frank Jones
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+     1 mysongs following: mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+ajones Anne Jones
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+
+cindy Cindy Reynolds
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+
+//======================================================
+//Test follow -u userid -p playlist -f stop  FR4.1.2
+follow -u cindy -p favourites -f stop
+delete -u ajones -p favourites -t 70
+show users
+MyTunesCollection:
+gjones Glenn Jones
+     Playlists:
+     0 mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+sjones Susan Jones
+     Playlists:
+
+fjones Frank Jones
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 71: You Won't See Me mp3: Unknown
+          2 19: Little Child mp3: Unknown
+          3 20: Till There Was You mp3: Unknown
+
+     1 mysongs following: mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+ajones Anne Jones
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 71: You Won't See Me mp3: Unknown
+          2 19: Little Child mp3: Unknown
+          3 20: Till There Was You mp3: Unknown
+
+
+cindy Cindy Reynolds
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+
+//======================================================
+//Test users mutually following each other FR4.1.4
+follow -u ajones -p favourites -f fjones
+delete -u ajones -p favourites -t 71
+delete -u fjones -p favourites -t 11
+show users
+MyTunesCollection:
+gjones Glenn Jones
+     Playlists:
+     0 mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+sjones Susan Jones
+     Playlists:
+
+fjones Frank Jones
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 19: Little Child mp3: Unknown
+          1 20: Till There Was You mp3: Unknown
+
+     1 mysongs following: mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+ajones Anne Jones
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 19: Little Child mp3: Unknown
+          1 20: Till There Was You mp3: Unknown
+
+
+cindy Cindy Reynolds
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+
+//======================================================
+//Test deleteing a users playlist FR4.1.9, FR4.1.10
+delete -u ajones -p favourites
+show users
+MyTunesCollection:
+gjones Glenn Jones
+     Playlists:
+     0 mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+sjones Susan Jones
+     Playlists:
+
+fjones Frank Jones
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 19: Little Child mp3: Unknown
+          1 20: Till There Was You mp3: Unknown
+
+     1 mysongs following: mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+ajones Anne Jones
+     Playlists:
+
+cindy Cindy Reynolds
+     Playlists:
+     0 favourites
+          Playlist Tracks:
+          0 11: Do You Want To Know A Secret mp3: Unknown
+          1 70: Norwegian Wood mp3: Unknown
+          2 71: You Won't See Me mp3: Unknown
+          3 19: Little Child mp3: Unknown
+          4 20: Till There Was You mp3: Unknown
+
+
+//======================================================
+//Test A-->B-->C-->A cycle (No specific requirement but supported)
+add -p gjones favourites
+EXECUTING: ADD PLAYLIST add -p gjones favourites
+follow -u cindy -p favourites -f fjones
+follow -u fjones -p favourites -f gjones
+follow -u gjones -p favourites -f cindy
+add -l cindy favourites 42
+show users
+MyTunesCollection:
+gjones Glenn Jones
+     Playlists:
+     0 mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+     1 favourites following: favourites
+          Playlist Tracks:
+          0 42: I'm A Loser mp3: Unknown
+
+
+sjones Susan Jones
+     Playlists:
+
+fjones Frank Jones
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 42: I'm A Loser mp3: Unknown
+
+     1 mysongs following: mysongs
+          Playlist Tracks:
+          0 1: I Saw Her Standing There mp3: Unknown
+          1 6: Ask Me Why mp3: Unknown
+
+
+ajones Anne Jones
+     Playlists:
+
+cindy Cindy Reynolds
+     Playlists:
+     0 favourites following: favourites
+          Playlist Tracks:
+          0 42: I'm A Loser mp3: Unknown
+
+
+//======================================================
+.log stop

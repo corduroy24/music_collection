@@ -1,0 +1,97 @@
+//add recordings
+//add -r album_id title producer year
+add -r 600 "Please Please Me" "Beatles" "George Martin" 1963
+add -r 601 "With The Beatles" "Beatles" "George Martin" 1963
+add -r 602 "A Hard Day's Night" "Beatles" "George Martin" 1964
+add -r 603 "Beatles For Sale" "Beatles" "George Martin" 1964
+
+//add songs
+//add -s sid title composer
+add -s 2000 "I Saw Her Standing There" "Paul McCartney, John Lennon"
+add -s 2001 "Misery" "Paul McCartney, John Lennon"
+add -s 2002 "Anna (Go To Him)" "Arthur Alexander"
+add -s 2003 "Chains" "Gerry Goffin, Carole King"
+add -s 2004 "Boys" "Luther Dixon, Wes Farrell"
+add -s 2005 "Ask Me Why" "Paul McCartney, John Lennon"
+
+//add tracks
+//add -t track_id albumID songID track_number
+add -t 301 600 1000 1
+add -t 302 600 1001 2
+add -t 303 600 1002 3
+add -t 304 600 1003 4
+add -t 305 600 1004 5
+add -t 306 600 1005 6
+add -t 307 600 1006 7
+add -t 308 600 1007 8
+add -t 309 600 1008 9
+add -t 310 600 1009 10
+add -t 311 600 1010 11
+add -t 312 600 1011 12
+add -t 15 101 1014 1
+add -t 16 101 1015 2
+add -t 17 101 1016 3
+add -t 18 101 1017 4
+add -t 19 101 1018 5
+add -t 20 101 1019 6
+add -t 21 101 1020 7
+add -t 22 101 1021 8
+add -t 23 101 1022 9
+add -t 24 101 1023 10
+add -t 25 101 1024 11
+add -t 26 101 1025 12
+add -t 27 101 1026 13
+add -t 28 102 1027 1
+add -t 29 102 1028 2
+add -t 30 102 1029 3
+add -t 31 102 1030 4
+add -t 32 102 1031 5
+add -t 33 102 1032 6
+add -t 34 102 1033 7
+add -t 35 102 1034 8
+add -t 36 102 1035 9
+add -t 37 102 1036 10
+add -t 38 102 1037 11
+add -t 39 102 1038 12
+add -t 40 102 1039 13
+add -t 41 103 1040 1
+add -t 42 103 1041 2
+add -t 43 103 1042 3
+add -t 44 103 1043 4
+add -t 45 103 1044 5
+add -t 46 103 1045 6
+add -t 47 103 1046 7
+add -t 48 103 1047 8
+add -t 49 103 1048 9
+add -t 50 103 1049 10
+add -t 51 103 1050 11
+add -t 52 103 1051 12
+
+
+
+//add users
+//add -u user_id name
+add -u gjones "Glenn Jones"
+add -u sjones "Susan Jones"
+add -u fjones "Frank Jones"
+add -u ajones "Anne Jones"
+add -u cindy "Cindy Reynolds"
+//add playlists
+//add -p user_id playlist_name
+add -p gjones "mysongs"
+add -p fjones "favourites"
+add -p fjones "mysongs"
+add -p ajones "morning songs"
+add -p ajones "evening songs"
+add -p ajones "driving"
+add -p ajones "favourites"
+add -p cindy "help"
+add -p cindy "songs"
+//add playlist tracks
+//add -l userid playlist_name, track_id
+add -l gjones "mysongs" 301
+add -l gjones "mysongs" 306
+add -l ajones "driving" 311
+add -l ajones "favourites" 311
+add -l cindy "songs" 311
+add -l fjones "favourites" 311
